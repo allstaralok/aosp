@@ -38,11 +38,9 @@ jobs:
         run: |
           mkdir ~/bin 
           PATH=~/bin:$PATH
-          curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo  
+          curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
+          repo init --depth=1 -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r46
           # gpg --recv-key 8BB9AD793E8E6153AF0F9A4416530D5E920F5C65
           # curl https://storage.googleapis.com/git-repo-downloads/repo.asc | gpg --verify - ~/bin/repo
           
-      - name: Fetching Repo android-10.0.0_r46
-        run: |
-          repo init --depth=1 -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r46
-
+      
