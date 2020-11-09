@@ -38,6 +38,7 @@ jobs:
         run: |
           mkdir ~/bin 
           PATH=~/bin:$PATH
+          #git checkout -b iss53
           curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo && chmod a+x ~/bin/repo
           repo init --depth=1 -u https://android.googlesource.com/platform/manifest -b android-10.0.0_r46
           pwd
